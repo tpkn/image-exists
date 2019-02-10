@@ -43,6 +43,6 @@ let options = {
    timeout: 1000
 }
 
-imageExists(images, callback, options);
+ImageExists(images, callback, options);
 // => { url: 'http://localhost/yey.png', time: 49 }
 ```
