@@ -7,7 +7,9 @@ Pass it an array of images, get the first one that exists. Pure vanilla, using `
 
 ## API
 
-### imageExists(images_list, complete[, options])
+```javascript
+imageExists(images_list, complete[, options])
+```
 
 ### images_list   
 **Type**: _Array_  
@@ -21,7 +23,7 @@ Callback function
 
 ### options   
 **Type**: _Object_  
-  - **timeout** _<Number>_ Time to wait for server answer. Default: `1000` ms
+  - **timeout**  <_Number_>  Time to wait for server answer. Default: `1000` ms
 
 
 
