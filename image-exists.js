@@ -1,5 +1,5 @@
 /*! Image Exists, https://tpkn.me */
-function imageExists(images_list, complete, options){
+function ImageExists(images_list, complete, options){
    if(!Array.isArray(images_list)){
       throw new TypeError('Images list must be an array');
    }

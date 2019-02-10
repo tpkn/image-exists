@@ -8,7 +8,7 @@ Pass it an array of images, get the first one that exists. Pure vanilla, using `
 ## API
 
 ```javascript
-imageExists(images_list, complete[, options])
+ImageExists(images_list, complete[, options])
 ```
 
 ### images_list   

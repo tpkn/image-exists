@@ -7,9 +7,7 @@
       <div id="app"></div>
       <script type="text/javascript" src="image-exists.min.js"></script>
       <script type="text/javascript">
-
          var app = document.querySelector('#app');
-
 
          var i = 0;
          var pid = setInterval(() => {
@@ -17,8 +15,7 @@
             app.innerHTML = sym[i]; if(i >= sym.length - 1) i = 0; i++;
          }, 100)
 
-
-         imageExists([
+         ImageExists([
             'http://localhost:5050/fail',
             'http://localhost:5050/endless',
             'http://localhost:5050/ok'
@@ -26,7 +23,6 @@
             clearInterval(pid);
             app.innerHTML = '<code><pre>' + JSON.stringify(result, true, 3) + '</pre></code>';
          }, { timeout: 2000 });
-
       </script>
    </body>
 </html>
