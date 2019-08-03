@@ -13,12 +13,12 @@ function ImageExists(images_list, complete, options){
       timeout = options.timeout;
    }
 
-   loop();
+   loop(0);
 
-   function loop(){
+   function loop(i){
       var time = Date.now();
-      var image_url = images_list.shift();
-
+      var image_url = images_list[i];
+ 
       var request = new XMLHttpRequest();
       request.timeout = timeout;
       request.open('HEAD', image_url);
@@ -26,8 +26,8 @@ function ImageExists(images_list, complete, options){
       request.onreadystatechange = function(){
          if(request.readyState != 4) return;
          if(request.status != 200){
-            if(images_list.length){
-               return loop();
+            if(i != images_list.length - 1){
+               return loop(++i);
             }
 
             // Return 'null' if list is empty and there is not a single 200 status
