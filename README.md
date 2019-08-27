@@ -1,30 +1,32 @@
 # Image Exists
 Check if remote image exists
 
-
-Pass it an array of images, get the first one that exists. Pure vanilla, using `XMLHttpRequest` API. Does not waste traffic to download the entire file.
+## Features
+ - Ping single remote image or an array of images
+ - **Does not consume time and traffic downloading the whole image**
+ - Cross browser (almost), pure vanilla js
 
 
 ## API
 
 ```javascript
-ImageExists(images_list, complete[, options])
+ImageExists(input[, options], complete)
 ```
 
-### images_list   
-**Type**: _Array_  
-Array of urls
+### input   
+**Type**: _String_ | _Array_  
+Single url, or an array of urls
+
+
+### options.timeout   
+**Type**: _Number_  
+**Default**: `1000` ms   
+Wait for a server response
 
 
 ### complete   
 **Type**: _Function_  
-Callback function
-
-
-### options   
-**Type**: _Object_  
-  - **timeout**  <_Number_>  Time to wait for server answer. Default: `1000` ms
-
+Callback function   
 
 
 ## Usage   
@@ -35,14 +37,13 @@ let images = [
    'https://localhost/yey.png'
 ];
 
-let callback = (result) => {
+ImageExists(images, { timeout: 1000 }, (err, result) => {
+	if(err){
+		// ...
+		return
+	}
+
    console.log(result);
-}
-
-let options = {
-   timeout: 1000
-}
-
-ImageExists(images, callback, options);
+});
 // => { url: 'http://localhost/yey.png', time: 49 }
 ```
