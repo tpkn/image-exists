@@ -1,4 +1,4 @@
-# Image Exists
+# Image Exists [![npm Package](https://img.shields.io/npm/v/img-exists.svg)](https://www.npmjs.org/package/img-exists)
 Check if remote image exists
 
 ## Features
