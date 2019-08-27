@@ -4,7 +4,7 @@ Check if remote image exists
 ## Features
  - Ping single remote image or an array of images
  - **Does not consume time and traffic downloading the whole image**
- - Cross browser (almost), pure vanilla js
+ - Cross browser (after Babel), pure vanilla js
 
 
 ## API
@@ -32,18 +32,17 @@ Callback function
 ## Usage   
 ```javascript
 let images = [
-   'https://localhost/fail.jpg', 
-   'https://localhost/timeout.gif', 
-   'https://localhost/yey.png'
+   'https://www.instagram.com/static/images/homepage/home-phones.png/43cc71bb1b43.png', 
+   'https://assets.nationalgeographic.com/styleguide/stable/logos/ng-logo-2fl.svg', 
+   'https://royalmail.com/sites/all/themes/royalmail2017/img/royalmail-logo.png',
+   'https://avatars3.githubusercontent.com/u/18248992?s=40&v=4'
 ];
 
 ImageExists(images, { timeout: 1000 }, (err, result) => {
-	if(err){
-		// ...
-		return
-	}
+   if(err){
+      // ...
+   }
 
-   console.log(result);
+   // ...
 });
-// => { url: 'http://localhost/yey.png', time: 49 }
 ```

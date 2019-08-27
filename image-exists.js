@@ -40,7 +40,7 @@ function ImageExists(input, options, complete){
             if(!err){
                results.push(result);
             }
-            if(done == input.length - 1){
+            if(done == input.length){
                complete(null, results);
             }
          });

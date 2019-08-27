@@ -1,12 +1,19 @@
 {
-   "name": "server",
-   "version": "1.0.0",
-   "main": "server.js",
-   "scripts": {
-      "dev": "nodemon server.js"
+   "name": "img-exists",
+   "main": "image-exists.js",
+   "version": "1.0.1",
+   "author": {
+      "url": "https://github.com/tpkn/"
    },
-   "dependencies": {
-      "express": "latest",
-      "cors": "latest"
-   }
+   "repository": "https://github.com/tpkn/image-exists",
+   "license": "MIT",
+   "keywords": [
+      "ping",
+      "image",
+      "images",
+      "exists",
+      "XMLHttpRequest",
+      "request",
+      "head"
+   ]
 }
