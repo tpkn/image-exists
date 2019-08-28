@@ -4,13 +4,19 @@
 "use strict";
 function ImageExists(input, options, complete){
    if(typeof input !== 'string' && !Array.isArray(input)){
-      throw new TypeError('Images list must be an array');
+      throw new TypeError('No input data');
    }
-   if(typeof complete !== 'function'){
+   if(typeof cb !== 'function' && typeof options !== 'function'){
       throw new TypeError('No callback function');
    }
 
-   function Request(url, options, cb){
+   // Make 'options' optional
+   if(typeof options === 'function'){
+      complete = options;
+   }
+
+
+   function Request(url, options, next){
       let { timeout = 1000 } = options;
 
       let request = new XMLHttpRequest();
@@ -20,11 +26,11 @@ function ImageExists(input, options, complete){
       request.onreadystatechange = function(){
          if(request.readyState != 4) return;
          if(request.status != 200){
-            cb(true, url);
+            next(true, url);
             return
          }
          
-         cb(null, url);
+         next(null, url);
       }
 
       request.send();

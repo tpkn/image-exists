@@ -1,7 +1,7 @@
 {
    "name": "img-exists",
    "main": "image-exists.js",
-   "version": "1.0.1",
+   "version": "1.0.2",
    "author": {
       "url": "https://github.com/tpkn/"
    },
